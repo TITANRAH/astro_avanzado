@@ -1,7 +1,7 @@
 ---
 title: "My Second Post"
 pubDate: "Jul 08 2022"
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: "/public/1.jpg"
 tags: ["Astro", "JavaScript"]
 ---
 
