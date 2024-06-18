@@ -1,0 +1,35 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+// DECLARAMOS UNA COLECCION MD EN LA CARPETA CONTENT Y LA TRAEMOS ASI
+// DEBEMOS PONER UN TIPADO Y VALIDACIONES CON ZOD EN CONFIG.TS DENTRO DE LA CARPETA CONTENT
+// DESPUES DE CREAR UNA COLECCION MD Y LLAMARLA AACA Y RECORRERLA EJECTUAR npx astro sync
+
+// respecto a los layout simplemente creo un layout con su slot y llamo al layout donde lo quiera ocupar y ya
+
+import { getCollection } from "astro:content";
+import Article from "@/components/blog/Article.astro";
+import ArticleList from "../layouts/ArticleList.astro";
+
+// ordena de mayor a menor  despues de hacer el await
+// toma el valor en numeros que entrega el valueof ennuna fecha y restalos
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+console.log(posts);
+
+
+---
+
+
+
+
+       <ArticleList>
+        {
+          posts.map((p) => (
+            <Article data={p.data} slug={p.slug}/>
+          ))
+        }
+   
+       </ArticleList>

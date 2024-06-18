@@ -1,0 +1,13 @@
+https://www.cufonfonts.com/font/google-sans
+
+estilizar markdown
+npm install -D @tailwindcss/typography
+
+ npx astro add astro-icon y dar yes
+npm i -D @iconify-json/lucide
+
+
+pra ceo aparte de la etiquetas ver las rrss
+
+npm install @astrojs/rss configurar archivo rss.xml.js
+npx astro add sitemap
