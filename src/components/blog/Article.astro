@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../formattedDate/FormattedDate.astro";
-import foto1 from "@/assets/1.jpg";
+import { Image } from "astro:assets";
 
 interface Props {
   data: CollectionEntry<"blog">["data"];
@@ -10,7 +9,8 @@ interface Props {
 }
 
 const { data, slug } = Astro.props;
-console.log(data.heroImage)
+console.log(data.heroImage);
+const image = data.heroImage;
 ---
 
 <li
@@ -19,17 +19,7 @@ console.log(data.heroImage)
   <div transition:name={data.title}>
     <article>
       <a href=`/blog/${slug}`>
-        {
-          data.heroImage != null && data.heroImage != "" && (
-
-            <Image
-              src={data.heroImage}
-              alt="..."
-              inferSize
-           
-            />
-          )
-        }
+        <Image src={image as any} alt="..." />
         <div class="w-full">
           <div class="flex flex-col px-12 py-4">
             <h4 class="text-3xl font-bold">{data.title}</h4>
