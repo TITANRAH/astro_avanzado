@@ -36,11 +36,11 @@ console.log(heroImage);
         {
           heroImage != null && heroImage != ''  && (
             <Image
-              class="w-full rounded-t-xl object-cover"
-              width={1000}
-              height={500}
-              src={`${heroImage}`}
+           
+              src={heroImage}
               alt="..."
+              inferSize
+
             />
           )
         }

@@ -21,12 +21,12 @@ console.log(data.heroImage)
       <a href=`/blog/${slug}`>
         {
           data.heroImage != null && data.heroImage != "" && (
+
             <Image
-              src={`${data.heroImage}`}
+              src={data.heroImage}
               alt="..."
-              width={1000}
-              height={500}
-              class="rounded-t-xl object-cover"
+              inferSize
+           
             />
           )
         }
