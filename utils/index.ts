@@ -1,16 +1,6 @@
 import { getCollection } from "astro:content"
 
-export function formatedDate(date: Date, pais: string){
 
-    const finalDate = date.toLocaleDateString(`${pais}`, {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    })
-  
-    return finalDate
-  }
-  
   
   export async function getAllTags(){
   

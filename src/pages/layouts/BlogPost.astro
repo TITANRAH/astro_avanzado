@@ -1,10 +1,8 @@
 ---
-function formatedDate(pubDate: any, arg1: string): unknown {
-    throw new Error("Function not implemented.");
-}
 
 import MainLayout from "./MainLayout.astro";
 import { type CollectionEntry } from "astro:content";
+import FormattedDate from '@/components/formattedDate/FormattedDate.astro'
 import { Image } from "astro:assets";
 type props = CollectionEntry<"blog">["data"] & { title: string };
 
@@ -45,7 +43,7 @@ const { title, pubDate, tags, heroImage } = Astro.props;
         <div
           class="prose-zinc lg:prose-xl px-12 py-12 text-white prose prose-invert"
         >
-          <time>{formatedDate(pubDate, "cl-CL")}</time>
+          <FormattedDate date={pubDate}/>
 
           <slot />
         </div>
