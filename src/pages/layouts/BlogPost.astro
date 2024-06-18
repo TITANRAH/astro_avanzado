@@ -15,7 +15,7 @@ const { title, pubDate, tags, heroImage } = Astro.props;
       class="text-soft-white border-extra-soft-white inline-flex cursor-pointer items-center gap-2 self-start rounded-full border px-6 py-2 transition-colors duration-200 hover:border-purple-500"
       href="/blog"
     >
-      <svg
+      <!-- <svg
         viewBox="0 -960 960 960"
         xmlns="http://www.w3.org/2000/svg"
         height="20"
@@ -23,7 +23,7 @@ const { title, pubDate, tags, heroImage } = Astro.props;
         ><path
           d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
           fill="#BFC7D2"></path></svg
-      >
+      > -->
 
       Back to blog
     </a>
@@ -36,7 +36,7 @@ const { title, pubDate, tags, heroImage } = Astro.props;
           class="w-full rounded-t-xl object-cover"
           width={1020}
           height={520}
-          src={heroImage}
+          src={heroImage && '/blog-placeholder-2.jpg'}
           alt="..."
         />
 

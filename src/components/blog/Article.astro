@@ -19,13 +19,13 @@ const { data, slug } = Astro.props;
   <div transition:name={data.title} >
     <article>
       <a href=`/blog/${slug}`>
-        <!-- <Image
-          src=""
-          alt="imagen"
+        <Image
+          src={data.heroImage && '/public/blog-placeholder-2.jpg'}
+          alt="..."
           width={1000}
           height={500}
           class="rounded-t-xl object-cover"
-        /> -->
+        />
         <div class="w-full">
           <div class="flex flex-col px-12 py-4">
             <h4 class="text-3xl font-bold">{data.title}</h4>
