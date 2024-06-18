@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../formattedDate/FormattedDate.astro";
 import { Image } from "astro:assets";
+import foto1 from '../../assets/1.jpg'
 
 interface Props {
   data: CollectionEntry<"blog">["data"];
@@ -19,7 +20,7 @@ const image = data.heroImage;
   <div transition:name={data.title}>
     <article>
       <a href=`/blog/${slug}`>
-        <img src='/src/assets/1.jpg' alt="..." width={1000} height={500}/>
+        <img src={foto1.src} alt="..." width={1000} height={500}/>
         <div class="w-full">
           <div class="flex flex-col px-12 py-4">
             <h4 class="text-3xl font-bold">{data.title}</h4>
