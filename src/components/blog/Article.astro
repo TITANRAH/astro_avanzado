@@ -19,7 +19,7 @@ const image = data.heroImage;
   <div transition:name={data.title}>
     <article>
       <a href=`/blog/${slug}`>
-        <Image src={image as any} alt="..." />
+        <Image src={image as any} alt="..." inferSize={true}/>
         <div class="w-full">
           <div class="flex flex-col px-12 py-4">
             <h4 class="text-3xl font-bold">{data.title}</h4>
