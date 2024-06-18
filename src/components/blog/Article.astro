@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { data, slug } = Astro.props;
-// console.log(data.heroImage)
+console.log(data.heroImage)
 ---
 
 <li
@@ -21,7 +21,7 @@ const { data, slug } = Astro.props;
       <a href=`/blog/${slug}`>
         {
           data.heroImage != null && data.heroImage != "" && (
-            <Image
+            <img
               src={data.heroImage}
               alt="..."
               width={1000}
