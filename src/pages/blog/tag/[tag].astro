@@ -1,9 +1,9 @@
 ---
 import Article from "@/components/blog/Article.astro";
-import { getAllTags } from "@/lib/utils";
 import ArticleList from "@/pages/layouts/ArticleList.astro";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+import { getAllTags } from "utils";
 
 export const getStaticPaths = (async () => {
   const tags = (await getAllTags()).map((t) => t.toLowerCase());

@@ -18,18 +18,8 @@ const posts = (await getCollection("blog")).sort(
 );
 
 console.log(posts);
-
-
 ---
 
-
-
-
-       <ArticleList>
-        {
-          posts.map((p) => (
-            <Article data={p.data} slug={p.slug}/>
-          ))
-        }
-   
-       </ArticleList>
+<ArticleList>
+  {posts.map((p) => <Article data={p.data} slug={p.slug} />)}
+</ArticleList>
