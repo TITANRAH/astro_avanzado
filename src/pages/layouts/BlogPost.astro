@@ -1,14 +1,13 @@
 ---
-
 import MainLayout from "./MainLayout.astro";
 import { type CollectionEntry } from "astro:content";
-import FormattedDate from '@/components/formattedDate/FormattedDate.astro'
+import FormattedDate from "@/components/formattedDate/FormattedDate.astro";
 import { Image } from "astro:assets";
 type props = CollectionEntry<"blog">["data"] & { title: string };
 
 const { title, pubDate, tags, heroImage } = Astro.props;
 
-console.log(heroImage)
+console.log(pubDate);
 ---
 
 <MainLayout title={title} description={title} image={heroImage}>
@@ -34,18 +33,27 @@ console.log(heroImage)
       transition:name={title}
     >
       <article>
-        <img
-          class="w-full rounded-t-xl object-cover"
-          width={1000}
-          height={500}
-          src={heroImage}
-          alt="..."
-        />
+        {
+          heroImage != null && heroImage != ''  && (
+            <Image
+              class="w-full rounded-t-xl object-cover"
+              width={1000}
+              height={500}
+              src={heroImage}
+              alt="..."
+            />
+          )
+        }
 
         <div
           class="prose-zinc lg:prose-xl px-12 py-12 text-white prose prose-invert"
         >
-          <FormattedDate date={pubDate}/>
+        {
+          pubDate != null && pubDate != undefined && (
+
+            <FormattedDate date={pubDate} />
+          )
+        }
 
           <slot />
         </div>
