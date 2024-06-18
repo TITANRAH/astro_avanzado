@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { data, slug } = Astro.props;
+console.log(data.heroImage)
 ---
 
 <li
@@ -22,7 +23,7 @@ const { data, slug } = Astro.props;
           src={data.heroImage}
           alt="imagen"
           width={1020}
-          height={520}
+          height={920}
           class="aspect-[16/5] rounded-t-xl object-cover"
         />
         <div class="w-full">
