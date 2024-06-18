@@ -8,7 +8,7 @@ interface Props {
     image?: string
 }
 
-const {title, description ='Nuestro blog en Astro', image= '/public/2.jpg'} = Astro.props
+const {title, description ='Nuestro blog en Astro', image= '/src/assets/2.jpg'} = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---

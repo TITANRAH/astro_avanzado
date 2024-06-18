@@ -7,7 +7,7 @@ type props = CollectionEntry<"blog">["data"] & { title: string };
 
 const { title, pubDate, tags, heroImage } = Astro.props;
 
-console.log(pubDate);
+console.log(heroImage);
 ---
 
 <MainLayout title={title} description={title} image={heroImage}>
@@ -16,7 +16,7 @@ console.log(pubDate);
       class="text-soft-white border-extra-soft-white inline-flex cursor-pointer items-center gap-2 self-start rounded-full border px-6 py-2 transition-colors duration-200 hover:border-purple-500"
       href="/blog"
     >
-      <!-- <svg
+      <svg
         viewBox="0 -960 960 960"
         xmlns="http://www.w3.org/2000/svg"
         height="20"
@@ -24,7 +24,7 @@ console.log(pubDate);
         ><path
           d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"
           fill="#BFC7D2"></path></svg
-      > -->
+      >
 
       Back to blog
     </a>

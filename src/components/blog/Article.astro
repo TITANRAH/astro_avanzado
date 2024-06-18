@@ -1,8 +1,8 @@
 ---
-
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../formattedDate/FormattedDate.astro";
+import foto1 from "@/assets/1.jpg";
 
 interface Props {
   data: CollectionEntry<"blog">["data"];
@@ -16,16 +16,20 @@ const { data, slug } = Astro.props;
 <li
   class="border-extra-soft-white text-soft-white hover:bg-soft-light rounded-xl border transition-colors duration-200"
 >
-  <div transition:name={data.title} >
+  <div transition:name={data.title}>
     <article>
       <a href=`/blog/${slug}`>
-        <Image
-          src={data.heroImage && '/public/2.jpg'}
-          alt="..."
-          width={1000}
-          height={500}
-          class="rounded-t-xl object-cover"
-        />
+        {
+          data.heroImage != null && data.heroImage != "" && (
+            <Image
+              src={data.heroImage}
+              alt="..."
+              width={1000}
+              height={500}
+              class="rounded-t-xl object-cover"
+            />
+          )
+        }
         <div class="w-full">
           <div class="flex flex-col px-12 py-4">
             <h4 class="text-3xl font-bold">{data.title}</h4>
@@ -39,7 +43,7 @@ const { data, slug } = Astro.props;
               }
             </div>
             <p class="mt-6 text-sm text-zinc-400">
-              <FormattedDate date={data.pubDate}/>
+              <FormattedDate date={data.pubDate} />
             </p>
           </div>
         </div>

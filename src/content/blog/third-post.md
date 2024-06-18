@@ -1,7 +1,7 @@
 ---
 title: "My Third Post"
 pubDate: "Jul 08 2022"
-heroImage: "/public/2.jpg"
+heroImage: "/src/assets/1.jpg"
 tags: ["AI", "JavaScript", "Frameworks"]
 ---
 
